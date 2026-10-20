@@ -1,0 +1,1 @@
+import {Router} from 'express'; import {createOrder,listOrders,updateStatus} from '../controllers/orderController.js'; import {requireAuth,requireStaff} from '../middleware/authMiddleware.js'; const r=Router(); r.post('/',createOrder); r.get('/',listOrders); r.patch('/:number/status',requireAuth,requireStaff,updateStatus); export default r;

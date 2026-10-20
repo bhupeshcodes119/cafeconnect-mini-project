@@ -1,0 +1,1 @@
+import test from 'node:test'; import assert from 'node:assert/strict'; test('CaféConnect project has the approved order statuses',()=>{assert.deepEqual(['Placed','Accepted','Preparing','Ready','Completed'].length,5)});

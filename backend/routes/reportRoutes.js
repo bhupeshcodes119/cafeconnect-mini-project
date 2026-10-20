@@ -1,0 +1,1 @@
+import {Router} from 'express'; import {report} from '../controllers/reportController.js'; import {requireAuth,requireStaff} from '../middleware/authMiddleware.js'; const r=Router(); r.get('/',requireAuth,requireStaff,report); export default r;

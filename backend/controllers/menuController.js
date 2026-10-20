@@ -1,0 +1,2 @@
+import MenuItem from '../models/MenuItem.js';
+export async function listMenu(req,res){try{const q=req.query.search||'';const category=req.query.category;const filter={name:{$regex:q,$options:'i'}};if(category&&category!=='All items')filter.category=category;res.json(await MenuItem.find(filter).populate('recipe.ingredientId').sort({category:1,name:1}))}catch(e){res.status(500).json({message:e.message})}}
